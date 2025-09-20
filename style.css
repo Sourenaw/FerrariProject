@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,body{
+    overflow-x: hidden;
+}
+body{
+    height: 2000px;
+}
 /* header */
 .header {
   width: 100%;
@@ -14,6 +20,8 @@
   gap: 60px;
   position: fixed;
   top: 0;
+  transform: translateY(0);
+  transition: transform 0.3s linear;
 }
 .header svg {
   width: 37px;
@@ -31,6 +39,14 @@
   font-weight: 100;
   font-size: medium;
   cursor: pointer;
+}
+/* header when scroll */
+.header.active{
+    background-color: #181818;
+    transform: translateY(0);
+}
+.header.notActive{
+    transform: translateY(-300%);
 }
 /* menu for mobile */
 .menu-mobile-user {
