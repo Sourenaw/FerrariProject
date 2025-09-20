@@ -34,7 +34,6 @@
 }
 /* menu for mobile */
 .menu-mobile-user {
-  all: unset;
   font-family: sans-serif;
   display: none;
   color: white;
