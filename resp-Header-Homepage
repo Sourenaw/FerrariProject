@@ -1,0 +1,25 @@
+/* responsive header*/
+@media screen and (max-width: 960px) {
+  /* header */
+  .header ul {
+    display: none;
+  }
+  .header .menu-mobile-user {
+    display: inline-block;
+  }
+  .header {
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* responsive svg and h1 in homepage */
+@media screen and (max-width: 750px) {
+  /* svg(ferrari logo) */
+  .header svg {
+    width: 30px;
+  }
+  /* h1 homepage */
+  .homePage .container h1 {
+    font-size: 25px;
+  }
+}
