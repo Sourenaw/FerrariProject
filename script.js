@@ -35,10 +35,37 @@ function scrolling() {
 
 // sliders video section 2
 const slides = document.querySelectorAll(".slide-video");
-count = 0;
-setInterval(() => {
+const selects = document.querySelectorAll(".selectVideo");
+let count = 0;
+let sliderInterval;
+
+function showSlide(index) {
   slides.forEach((slide) => slide.classList.remove("active"));
-  slides[count].classList.add("active");
-  count++;
-  if (count >= slides.length) count = 0;
-}, 12000);
+  slides[index].classList.add("active");
+  selects.forEach((select) => select.classList.remove("active"));
+  selects[index].classList.add("active");
+  count = index; // آپدیت شمارنده
+}
+
+selects.forEach((select, index) => {
+  select.addEventListener("click", () => {
+    showSlide(index);
+    resetInterval();
+  });
+});
+
+function nextSlide() {
+  let next = count + 1 >= slides.length ? 0 : count + 1;
+  showSlide(next);
+}
+
+function startInterval() {
+  sliderInterval = setInterval(nextSlide, 12000);
+}
+
+function resetInterval() {
+  clearInterval(sliderInterval);
+  startInterval();
+}
+
+startInterval();
