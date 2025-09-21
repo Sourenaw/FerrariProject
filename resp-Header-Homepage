@@ -22,4 +22,8 @@
   .homePage .container h1 {
     font-size: 25px;
   }
+  /* responsive video player section */
+  .video-section .slide-video .box-on-video h1 {
+    font-size: 25px;
+  }
 }
