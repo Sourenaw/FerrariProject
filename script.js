@@ -5,7 +5,6 @@ const removeMenu = document.querySelector(".removeMenu");
 menu.addEventListener("click", () => openMenu.classList.add("active"));
 removeMenu.addEventListener("click", () => openMenu.classList.remove("active"));
 
-
 // hide and show menu when scrolling
 const header = document.querySelector(".header");
 let lastScroll = 0;
@@ -33,3 +32,13 @@ function scrolling() {
 
   lastScroll = currentScroll;
 }
+
+// sliders video section 2
+const slides = document.querySelectorAll(".slide-video");
+count = 0;
+setInterval(() => {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slides[count].classList.add("active");
+  count++;
+  if (count >= slides.length) count = 0;
+}, 12000);

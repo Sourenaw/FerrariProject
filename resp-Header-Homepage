@@ -24,6 +24,6 @@
   }
   /* responsive video player section */
   .video-section .slide-video .box-on-video h1 {
-    font-size: 25px;
+    font-size: 17px;
   }
 }
