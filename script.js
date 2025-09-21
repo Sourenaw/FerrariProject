@@ -44,7 +44,7 @@ function showSlide(index) {
   slides[index].classList.add("active");
   selects.forEach((select) => select.classList.remove("active"));
   selects[index].classList.add("active");
-  count = index; // آپدیت شمارنده
+  count = index;
 }
 
 selects.forEach((select, index) => {
