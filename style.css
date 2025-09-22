@@ -305,6 +305,7 @@ body {
   font-size: 16px;
   transition: all 0.2s linear;
   cursor: pointer;
+  color: rgb(122, 122, 122);
 }
 .slide-photo .right-slider {
   width: 45%;
