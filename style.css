@@ -7,11 +7,15 @@ html,
 body {
   overflow-x: hidden;
 }
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
 /* header */
 .header {
   width: 100%;
   height: 90px;
-  background-color: #18181800;
+  background-color: #18181800;  
   padding: 0 25px;
   display: flex;
   align-items: center;
@@ -128,35 +132,35 @@ body {
   box-shadow: inset 0 40px 90px 10px;
   padding-bottom: 100px;
 }
-.homePage .container {
+.homePage .container-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-.homePage .container h1 {
+.homePage .container-box h1 {
   color: white;
   font-size: 40px;
   font-family: sans-serif;
   letter-spacing: 3px;
   text-align: center;
 }
-.homePage .container .buttons {
+.homePage .container-box .buttons {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 10px;
 }
-.homePage .container button {
+.homePage .container-box button {
   padding: 20px 25px;
   background-color: rgba(0, 0, 0, 0.14);
   border: 1px solid rgb(147, 147, 147);
   color: white;
   letter-spacing: 1px;
 }
-.homePage .container button:hover {
+.homePage .container-box button:hover {
   cursor: pointer;
   border-color: white;
 }
@@ -252,4 +256,89 @@ body {
 }
 .selectBox .selectVideo.active .dotted {
   opacity: 0;
+}
+/* section3(slider photo) */
+.slider-photo-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+.slider-photo-container .slide-photo {
+  height: 100%;
+  width: 100%;
+  display: none;
+  font-family: sans-serif;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.slide-photo .left-slider {
+  width: 45%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 40px;
+  font-weight: 100;
+}
+.slide-photo .left-slider .title {
+  width: 70%;
+  font-size: 27px;
+  letter-spacing: 1px;
+}
+.slide-photo .left-slider .discribtion {
+  width: 70%;
+  line-height: 25px;
+}
+.slide-photo .left-slider div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.slide-photo .left-slider .go-button-container .go-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgb(147, 147, 147);
+  font-size: 16px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.slide-photo .right-slider {
+  width: 45%;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.slider-photo-container .buttonSlider {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  border: none;
+  font-size: 21px;
+  position: absolute;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  z-index: 200;
+}
+.slider-photo-container .left-arrow {
+  left: 0;
+  top: 50%;
+}
+.slider-photo-container .right-arrow {
+  right: 0;
+  bottom: 50%;
+}
+.slider-photo-container .buttonSlider:active {
+  transform: scale(20%);
+}
+
+.slide-photo.active {
+  display: flex;
 }

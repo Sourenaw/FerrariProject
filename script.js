@@ -69,3 +69,38 @@ function resetInterval() {
 }
 
 startInterval();
+
+
+// sliders photo section 3
+let rightBTN = document.querySelector(".right-arrow");
+let leftBTN = document.querySelector(".left-arrow");
+let slidePhotos = document.querySelectorAll(".slide-photo");
+let counterSliderPhoto = 0;
+
+showFirstSlider();
+
+function showFirstSlider() {
+  slidePhotos[counterSliderPhoto].classList.add("active");
+}
+
+rightBTN.addEventListener("click", rightSliderFunction);
+
+function rightSliderFunction() {
+  counterSliderPhoto++;
+  if(counterSliderPhoto >= slidePhotos.length){
+    counterSliderPhoto = 0
+  }
+  slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
+  slidePhotos[counterSliderPhoto].classList.add("active");
+}
+
+leftBTN.addEventListener("click", leftSliderFunction);
+
+function leftSliderFunction() {
+  counterSliderPhoto--;
+  if (counterSliderPhoto  < 0) {
+    counterSliderPhoto = 2;
+  }
+  slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
+  slidePhotos[counterSliderPhoto].classList.add("active");
+}
