@@ -87,20 +87,37 @@ rightBTN.addEventListener("click", rightSliderFunction);
 
 function rightSliderFunction() {
   counterSliderPhoto++;
-  if(counterSliderPhoto >= slidePhotos.length){
-    counterSliderPhoto = 0
+  if (counterSliderPhoto > slidePhotos.length - 1) {
+    counterSliderPhoto = 2;
+    controlButtonsViss(counterSliderPhoto);
+  } else {
+    slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
+    slidePhotos[counterSliderPhoto].classList.add("active");
   }
-  slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
-  slidePhotos[counterSliderPhoto].classList.add("active");
 }
 
 leftBTN.addEventListener("click", leftSliderFunction);
 
 function leftSliderFunction() {
   counterSliderPhoto--;
-  if (counterSliderPhoto  < 0) {
-    counterSliderPhoto = 2;
+  if (counterSliderPhoto < 0) {
+    counterSliderPhoto = 0;
+    controlButtonsViss(counterSliderPhoto);
+  } else {
+    slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
+    slidePhotos[counterSliderPhoto].classList.add("active");
   }
-  slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
-  slidePhotos[counterSliderPhoto].classList.add("active");
+}
+
+function controlButtonsViss(index) {
+  if (index < 0) {
+    leftBTN.disabled = true;
+  } else {
+    leftBTN.disabled = false;
+  }
+  if (index > 2) {
+    rightBTN.disabled = true;
+  } else {
+    rightBTN.disabled = false;
+  }
 }
