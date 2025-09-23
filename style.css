@@ -334,12 +334,15 @@ body {
 }
 .slider-photo-container .right-arrow {
   right: 0;
-  bottom: 50%;
+  top: 50%;
 }
 .slider-photo-container .buttonSlider:active {
   transform: scale(20%);
 }
-
+.buttonSlider.active{
+  opacity: 0.4;
+  pointer-events: none;
+}
 .slide-photo.active {
   display: flex;
 }

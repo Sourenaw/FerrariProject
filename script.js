@@ -78,22 +78,24 @@ let slidePhotos = document.querySelectorAll(".slide-photo");
 let counterSliderPhoto = 0;
 
 showFirstSlider();
+controlButtonsViss(counterSliderPhoto);
 
 function showFirstSlider() {
   slidePhotos[counterSliderPhoto].classList.add("active");
 }
+function showSlider(index) {
+  slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
+  slidePhotos[index].classList.add("active");
+}
 
 rightBTN.addEventListener("click", rightSliderFunction);
-
 function rightSliderFunction() {
   counterSliderPhoto++;
   if (counterSliderPhoto > slidePhotos.length - 1) {
-    counterSliderPhoto = 2;
-    controlButtonsViss(counterSliderPhoto);
-  } else {
-    slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
-    slidePhotos[counterSliderPhoto].classList.add("active");
+    counterSliderPhoto = slidePhotos.length - 1;
   }
+  showSlider(counterSliderPhoto);
+  controlButtonsViss(counterSliderPhoto);
 }
 
 leftBTN.addEventListener("click", leftSliderFunction);
@@ -102,22 +104,24 @@ function leftSliderFunction() {
   counterSliderPhoto--;
   if (counterSliderPhoto < 0) {
     counterSliderPhoto = 0;
-    controlButtonsViss(counterSliderPhoto);
-  } else {
-    slidePhotos.forEach((slidePhoto) => slidePhoto.classList.remove("active"));
-    slidePhotos[counterSliderPhoto].classList.add("active");
   }
+  showSlider(counterSliderPhoto);
+  controlButtonsViss(counterSliderPhoto);
 }
 
 function controlButtonsViss(index) {
-  if (index < 0) {
+  if (index <= 0) {
     leftBTN.disabled = true;
+    leftBTN.classList.add("active");
   } else {
     leftBTN.disabled = false;
+    leftBTN.classList.remove("active");
   }
-  if (index > 2) {
+  if (index >= slidePhotos.length - 1) {
     rightBTN.disabled = true;
+    rightBTN.classList.add("active");
   } else {
     rightBTN.disabled = false;
+    rightBTN.classList.remove("active");
   }
 }
