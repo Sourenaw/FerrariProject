@@ -30,11 +30,17 @@
   .slider-photo-container .buttonSlider{
     display: none;
   }
+  .slider-photo-container{
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
   .slide-photo {
     display: flex !important;  
     flex-direction: column-reverse;
     align-items: center;
     gap: 10px;
+    height: auto;
   }
   .slide-photo .left-slider{
     padding: 0 20px;
@@ -42,6 +48,9 @@
   }
   .slide-photo .left-slider .title{
     font-size: 20px;
+  }
+  .slide-photo .right-slider{
+    height: 300px;
   }
   .slide-photo .left-slider,
   .slide-photo .right-slider {
