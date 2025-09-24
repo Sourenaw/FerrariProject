@@ -44,7 +44,7 @@
   }
   .slide-photo .left-slider{
     padding: 0 20px;
-    gap: 15px;
+    gap: 5px;
   }
   .slide-photo .left-slider .title{
     font-size: 20px;
